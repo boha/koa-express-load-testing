@@ -9,9 +9,5 @@
     "transform-object-rest-spread",
     "transform-async-to-generator",
     "bluebird-async-functions"
-  ],
-  "ignore": [
-    "node_modules",
-    "lib/**/*-es5.js"
   ]
 }
