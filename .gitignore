@@ -1,0 +1,20 @@
+#DUHH
+.DS_Store
+.eslintrc
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Compiled
+server
+!lib/server
+
+# Dependency directory
+node_modules
+
+# Vagrant
+.vagrant
+
+.env
