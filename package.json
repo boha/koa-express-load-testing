@@ -4,12 +4,16 @@
   "description": "Stuff",
   "scripts": {
     "dev:koa": "gulp watch --entry koa",
+    "dev:koa-es5": "gulp watch --entry koa-es5",
     "dev:koa-await": "gulp watch --entry koa-await",
+    "dev:express-es5": "gulp watch --entry express-es5",
     "dev:express": "gulp watch --entry express",
     "dev:express-await": "gulp watch --entry express-await",
+    "prod:koa-es5": "gulp --entry koa-es5",
     "prod:koa": "gulp --entry koa",
     "prod:koa-await": "gulp --entry koa-await",
     "prod:express": "gulp --entry express",
+    "prod:express-es5": "gulp --entry express-es5",
     "prod:express-await": "gulp --entry express-await"
   },
   "author": "DtotheFP",

@@ -1,5 +1,6 @@
 const baseTasks = [
   'browser-sync',
+  'copy',
   'clean',
   'eslint',
   'mocha'
