@@ -51,10 +51,13 @@ export default {
     const entryI = process.argv.indexOf('--entry');
     const [serverEntry] = entryI > -1 ? process.argv.slice(entryI + 1, entryI + 2) : ['koa'];
     const entry = path.basename(serverEntry, path.extname(serverEntry));
+    const intervalI = process.argv.indexOf('--int');
+    const [interval] = intervalI > -1 ? process.argv.slice(intervalI + 1, intervalI + 2) : ['50'];
 
     return merge({}, nodemonConfig, {
       script: path.join(serverDir, 'index.js'),
       env: {
+        INTERVAL: interval,
         DEBUG: entry,
         NODE_ENV: ENV,
         SERVER_ENTRY: entry,

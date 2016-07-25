@@ -14,7 +14,7 @@
     "prod:koa-await": "gulp  --entry koa-await && node ./server/lib/index.js",
     "prod:express": "gulp --entry express && node ./server/lib/index.js",
     "prod:express-es5": "gulp  --entry express-es5 && node ./server/lib/index.js",
-    "prod:express-await": "gulp  express-await && node ./server/lib/index.js --entry"
+    "prod:express-await": "gulp --entry express-await && node ./server/lib/index.js"
   },
   "author": "DtotheFP",
   "license": "Copyright 2016",
