@@ -26,6 +26,20 @@ export default {
 
     return babelConfig;
   },
+  copy(config, copyConfig) {
+    const {sources, utils} = config;
+    const {syncDir} = sources;
+    const {addbase} = utils;
+
+    copyConfig.endpoints = [
+      {
+        src: addbase('package.json'),
+        dest: addbase(syncDir)
+      }
+    ];
+
+    return copyConfig;
+  },
   mocha: {
     require: path.resolve(__dirname, 'babel-hook.js')
   },

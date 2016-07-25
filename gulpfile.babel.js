@@ -12,6 +12,8 @@ gulp.task('babel', tasks.babel);
 gulp.task('babel:dev', tasks.babel);
 gulp.task('browser-sync', tasks.browserSync);
 gulp.task('clean', tasks.clean);
+gulp.task('copy', tasks.copy);
+gulp.task('env', tasks.env);
 gulp.task('lint:test', tasks.eslint);
 gulp.task('lint:build', tasks.eslint);
 gulp.task('lint', gulp.parallel('lint:test', 'lint:build'));
@@ -49,8 +51,7 @@ const run = () => {
     task = gulp.series(
       'clean',
       'lint',
-      'babel',
-      'serve'
+      gulp.parallel('copy', 'env', 'babel')
     );
   }
 
