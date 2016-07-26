@@ -7,11 +7,8 @@
       "regenerator": false
     }],
     "transform-object-rest-spread",
-    "transform-async-to-generator",
+    "transform-es2015-arrow-functions",
+    "syntax-async-functions",
     "bluebird-async-functions"
-  ],
-  "ignore": [
-    "node_modules",
-    "server"
   ]
 }

@@ -14,7 +14,14 @@
     "prod:koa-await": "gulp  --entry koa-await && node ./server/lib/index.js",
     "prod:express": "gulp --entry express && node ./server/lib/index.js",
     "prod:express-es5": "gulp  --entry express-es5 && node ./server/lib/index.js",
-    "prod:express-await": "gulp --entry express-await && node ./server/lib/index.js"
+    "prod:express-await": "gulp --entry express-await && node ./server/lib/index.js",
+    "logs": "tail -f server/lib/*-warn.log | bunyan -l warn",
+    "loadtest:assemble:low": "loadtest -c 1 --rps 10 http://localhost:3000/assemble-basic",
+    "loadtest:assemble:medium": "loadtest -c 10 --rps 100 http://localhost:3000/assemble-basic",
+    "loadtest:assemble:high": "loadtest -c 100 --rps 1000 http://localhost:3000/assemble-basic",
+    "loadtest:nunjucks:low": "loadtest -c 1 --rps 10 http://localhost:3000/nunjucks",
+    "loadtest:nunjucks:medium": "loadtest -c 10 --rps 100 http://localhost:3000/nunjucks",
+    "loadtest:nunjucks:high": "loadtest -c 100 --rps 1000 http://localhost:3000/nunjucks"
   },
   "author": "DtotheFP",
   "license": "Copyright 2016",
@@ -25,11 +32,15 @@
     "boiler-task-nodemon": "^3.0.3"
   },
   "dependencies": {
+    "assemble-core": "^0.25.0",
+    "assemble-loader": "^0.6.1",
+    "async": "^2.0.1",
     "babel-cli": "^6.10.1",
     "babel-core": "^6.3.17",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-bluebird-async-functions": "^1.2.0",
     "babel-plugin-rewire": "^1.0.0-rc-3",
+    "babel-plugin-syntax-async-functions": "^6.8.0",
     "babel-plugin-transform-async-to-generator": "^6.8.0",
     "babel-plugin-transform-object-rest-spread": "^6.8.0",
     "babel-plugin-transform-runtime": "^6.8.0",
@@ -39,19 +50,25 @@
     "babel-preset-react": "^6.1.18",
     "babel-register": "^6.3.13",
     "bluebird": "^3.4.0",
+    "boiler-addon-assemble-middleware": "^3.2.0",
+    "boiler-addon-assemble-nunjucks": "^3.2.0",
     "boiler-core": "^3.0.3",
     "boiler-preset-base": "^3.0.3",
     "boiler-task-babel": "^3.0.3",
     "boiler-task-mocha": "^3.0.9",
     "boiler-utils": "^3.0.9",
     "bunyan": "^1.8.1",
+    "consolidate": "^0.14.1",
     "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "fs-extra": "^0.26.7",
     "gulp": "github:gulpjs/gulp#4.0",
     "koa": "^2.0.0-alpha.4",
     "koa-compose": "^3.1.0",
+    "koa-json": "^2.0.2",
     "koa-router": "^7.0.1",
-    "lodash": "^4.0.0"
+    "loadtest": "^1.4.3",
+    "lodash": "^4.0.0",
+    "nunjucks": "^2.4.2"
   }
 }

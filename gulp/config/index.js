@@ -28,13 +28,21 @@ export default {
   },
   copy(config, copyConfig) {
     const {sources, utils} = config;
-    const {syncDir} = sources;
+    const {serverDir, syncDir, srcDir, templateDir} = sources;
     const {addbase} = utils;
 
     copyConfig.endpoints = [
       {
+        src: addbase(srcDir, templateDir, '**/*'),
+        dest: addbase(syncDir, srcDir, templateDir)
+      },
+      {
         src: addbase('package.json'),
         dest: addbase(syncDir)
+      },
+      {
+        src: addbase(serverDir, '**/*.json'),
+        dest: addbase(syncDir, serverDir)
       }
     ];
 
