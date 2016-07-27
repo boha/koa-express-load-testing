@@ -140,6 +140,7 @@ Transfer/sec:    311.49KB
 ###################### assemble new instance per request #################
 wrk -R 1000 -d 20s -t 4 -c 500 http://localhost:3000/assemble-new
 
+[2016-07-27T17:13:52.339Z]  WARN: templating-express/83428 on dfp.local:  (ARBITRARY_DELAY=644)
 [2016-07-27T17:04:40.136Z]  WARN: templating-express/83428 on dfp.local:  (READ_JSON=2488)
 [2016-07-27T17:04:40.138Z]  WARN: templating-express/83428 on dfp.local:  (TEMPLATE_SETUP=2)
 [2016-07-27T17:04:40.390Z]  WARN: templating-express/83428 on dfp.local:  (ASSEMBLE_NEW_RENDER=928)
