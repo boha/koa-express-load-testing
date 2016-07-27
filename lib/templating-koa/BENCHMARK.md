@@ -128,6 +128,20 @@ wrk -R 1000 -d 20s -t 4 -c 500 http://localhost:3000/assemble-new
 [2016-07-27T17:30:11.897Z]  WARN: templating-koa/86693 on dfp.local:  (ASSEMBLE_NEW_RENDER=354)
 [2016-07-27T17:30:11.902Z]  WARN: templating-koa/86693 on dfp.local:  (DURATION=4127)
 
+Running 20s test @ http://localhost:3000/assemble-new
+  4 threads and 500 connections
+  Thread calibration: mean lat.: 6205.268ms, rate sampling interval: 17547ms
+  Thread calibration: mean lat.: 3909.602ms, rate sampling interval: 13877ms
+  Thread calibration: mean lat.: 3905.986ms, rate sampling interval: 13877ms
+  Thread calibration: mean lat.: 5917.907ms, rate sampling interval: 17547ms
+  Thread Stats   Avg      Stdev     Max   +/- Stdev
+    Latency    13.00s     2.08s   16.03s    48.59%
+    Req/Sec        nan       nan   0.00      0.00%
+  2560 requests in 20.17s, 845.00KB read
+  Socket errors: connect 0, read 255, write 0, timeout 1688
+Requests/sec:    126.90
+Transfer/sec:     41.89KB
+
 ################################# nunjucks #############################
 wrk -R 1000 -d 20s -t 4 -c 500 http://localhost:3000/nunjucks
 
